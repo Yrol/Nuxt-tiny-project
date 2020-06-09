@@ -3,6 +3,10 @@
     <h1>Main user page</h1>
     <input type="text" v-model="userID" />
 
+<div class="alert alert-primary" role="alert">
+  A simple primary alert—check it out!
+</div>
+
     <button @click="loadUser">Load user</button>
   </div>
 </template>
