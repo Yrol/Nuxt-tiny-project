@@ -1,3 +1,4 @@
+const webpack = require("webpack")
 
 export default {
   mode: 'universal',
@@ -23,12 +24,13 @@ export default {
   ** Global CSS
   */
   css: [
+    "~/node_modules/bootstrap/dist/css/bootstrap.css"
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/bootstrap-vue'
+    "~plugins/bootstrap.js"
   ],
   /*
   ** Nuxt.js dev-modules
@@ -47,7 +49,17 @@ export default {
     /*
     ** You can extend webpack config here
     */
+   vendor: ["jquery", "bootstrap"],
+   plugins: [
+     new webpack.ProvidePlugin({
+       $: "jquery",
+       jQuery: 'jquery',
+       jquery: 'jquery',
+       'window.jQuery': 'jquery'
+     })
+   ],
     extend (config, ctx) {
+
     }
   }
 }
