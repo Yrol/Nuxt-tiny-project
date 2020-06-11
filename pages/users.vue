@@ -1,5 +1,5 @@
 <!--
-This component will be inherited by the "users" page and all its child pages
+This component will be inherited by the "users" (the index.vue of /users) page and all its child pages
 Using "nuxt-child" property to create the relationship
  -->
 <template>

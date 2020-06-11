@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <nuxt-link to="/">Home</nuxt-link>
+    <nuxt-link class="navbar-brand" to="/">TheGoodSite</nuxt-link>
     <button
       class="navbar-toggler"
       type="button"
@@ -16,7 +16,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <nuxt-link to="/users">
+          <nuxt-link class="nav-link" to="/users">
             Users
           </nuxt-link>
         </li>
