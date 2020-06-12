@@ -1,18 +1,26 @@
 <template>
-  <h1>Posts page</h1>
+  <div>
+     <div v-for="post in posts" :key="post.id">
+       <p>{{post.title}}</p>
+     </div>
+  </div>
 </template>
 
 <script>
 import axios from 'axios'
 export default {
-  data(){
-    return{
+  data() {
+    return {
       posts:[]
     }
   },
-
-  mounted() {
-
+  asyncData(){
+    return axios.get('https://jsonplaceholder.typicode.com/posts')
+    .then(res => {
+      return {posts: res.data}
+    })
   }
 }
 </script>
+
+
