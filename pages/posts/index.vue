@@ -23,11 +23,16 @@ export default {
     } catch(error) {
       console.log(error)
     }
+  },
+
+  //changing the title of the page
+  head: {
+    title: 'List of posts'
   }
 
   //without Async
   // asyncData(){
-  //   return axios.get('https://jsonplaceholder.typicode.com/posts')
+  //   return axios.ge t('https://jsonplaceholder.typicode.com/posts')
   //   .then(res => {
   //     return {posts: res.data}
   //   })
