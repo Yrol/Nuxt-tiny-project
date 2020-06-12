@@ -1,19 +1,21 @@
 <template>
   <div>
-     <div v-for="post in posts" :key="post.id">
-       <p>{{post.title}}</p>
+     <postview v-for="post in posts" :key="post.id" :post_data="post" />
      </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import postview from '../../components/Post'
 export default {
   data() {
     return {
       posts:[]
     }
   },
+
+  components: { postview },
 
   //with async
   async asyncData(){
