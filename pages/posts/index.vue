@@ -14,12 +14,24 @@ export default {
       posts:[]
     }
   },
-  asyncData(){
-    return axios.get('https://jsonplaceholder.typicode.com/posts')
-    .then(res => {
+
+  //with async
+  async asyncData(){
+    try{
+      let res = await axios.get('https://jsonplaceholder.typicode.com/posts')
       return {posts: res.data}
-    })
+    } catch(error) {
+      console.log(error)
+    }
   }
+
+  //without Async
+  // asyncData(){
+  //   return axios.get('https://jsonplaceholder.typicode.com/posts')
+  //   .then(res => {
+  //     return {posts: res.data}
+  //   })
+  // }
 }
 </script>
 
