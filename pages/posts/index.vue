@@ -1,7 +1,6 @@
 <template>
   <div>
      <postview v-for="post in posts" :key="post.id" :post_data="post" />
-     </div>
   </div>
 </template>
 
