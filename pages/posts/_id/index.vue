@@ -28,6 +28,12 @@ export default {
     } catch (error) {
       console.log(error);
     }
+  },
+  //Unlike in "/pages/posts/index.vue", here using a callback function to return title when the post data is available in "asyncData"
+  head() {
+    return {
+      title:this.post.title
+    }
   }
 };
 </script>
