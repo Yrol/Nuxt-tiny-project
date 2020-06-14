@@ -25,7 +25,7 @@ export default {
     },
 
     //using mappGetters instead of "allPosts" above (make sure to use 'posts' in 'v-for')
-   // ...mapGetters(['posts'])
+   //...mapGetters(['posts'])
   },
 
   //with async
