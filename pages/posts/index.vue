@@ -17,10 +17,11 @@ export default {
   components: { postview },
 
   //with async
-  async asyncData(){
+  async asyncData(context){
     try{
       let res = await axios.get('https://jsonplaceholder.typicode.com/posts')
-      return {posts: res.data}
+      context.store.dispatch('setPosts', res.data)
+      //return {posts: res.data}
     } catch(error) {
       console.log(error)
     }

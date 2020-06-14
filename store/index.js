@@ -1,6 +1,6 @@
 //creating a store
 export const state = () => ({
-  posts: {}
+  posts:[]
 })
 
 //getters - getters will return objects defined in state
@@ -22,7 +22,8 @@ export const mutations = {
 * We can perform time consuming tasks such as server fetching data from servers and dispatch them within the app.
 */
 export const actions = {
-  setPosts:(context, posts) => {
-    context.commit('setPosts', posts)
+  //can also use 'commit directly by destructuring it "setPosts:({commit}, payload) => {}"'
+  setPosts:(context, payload) => {
+    context.commit('setPosts', payload)
   }
 }
