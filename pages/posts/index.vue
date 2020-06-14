@@ -28,7 +28,7 @@ export default {
 
   //changing the title of the page
   head: {
-    title: 'List of posts'
+    title: 'Posts'
   }
 
   //without Async

@@ -19,6 +19,9 @@ export default {
     loadUser () {
       this.$router.push(`/users/${this.userID}`)
     }
+  },
+  head:{
+    title:"Users"
   }
 }
 </script>
