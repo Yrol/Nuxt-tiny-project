@@ -1,20 +1,32 @@
 <template>
   <div>
-     <postview v-for="post in posts" :key="post.id" :post_data="post" />
+    <!-- Using computed property "allPosts" to access posts-->
+    <postview v-for="post in allPosts" :key="post.id" :post_data="post" />
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import {mapGetters} from 'vuex'
 import postview from '../../components/Post'
 export default {
+
+  components: { postview },
+
   data() {
     return {
-      posts:[]
+      //allPosts:[]
     }
   },
 
-  components: { postview },
+  computed: {
+    allPosts() {
+      return this.$store.getters.posts
+    },
+
+    //using mappGetters instead of "allPosts" above (make sure to use 'posts' in 'v-for')
+   // ...mapGetters(['posts'])
+  },
 
   //with async
   async asyncData(context){
@@ -36,7 +48,7 @@ export default {
   // asyncData(){
   //   return axios.ge t('https://jsonplaceholder.typicode.com/posts')
   //   .then(res => {
-  //     return {posts: res.data}
+  //     return {allPosts: res.data}
   //   })
   // }
 }
